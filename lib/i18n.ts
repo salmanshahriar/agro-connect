@@ -1,0 +1,329 @@
+export const translations = {
+  en: {
+    // Navigation
+    "nav.marketplace": "Marketplace",
+    "nav.dashboard": "Dashboard",
+    "nav.logout": "Log out",
+    "nav.farmer_login": "Farmer Login",
+    "nav.buyer_login": "Buyer Login",
+    "nav.language": "Language",
+
+    // Landing Page
+    "landing.hero_title": "Connect local farms to city kitchens",
+    "landing.hero_subtitle":
+      "Fresh produce, fair prices, trusted trade — from Kumira to Chattogram",
+    "landing.farmer_portal": "Farmer Portal",
+    "landing.buyer_portal": "Buyer Portal",
+    "landing.try_demo": "Try our demo accounts — no signup required",
+
+    // Explore Section
+    "landing.explore_title": "Explore Our Marketplace",
+    "landing.explore_subtitle":
+      "Browse fresh produce from verified local farmers. Quality guaranteed, prices transparent.",
+    "landing.products": "Fresh Products",
+    "landing.farmers": "Verified Farmers",
+    "landing.open_market": "Open Marketplace",
+    "landing.visit_marketplace": "Visit Marketplace",
+
+    // Features
+    "landing.why_choose": "Why Choose AgroConnect?",
+    "landing.why_subtitle":
+      "We're building a transparent, efficient marketplace that benefits everyone in the supply chain.",
+    "landing.fair_prices": "Fair Prices",
+    "landing.fair_prices_desc":
+      "Direct connection means better prices for farmers and competitive rates for buyers. No middlemen markup.",
+    "landing.verified_quality": "Verified Quality",
+    "landing.verified_quality_desc":
+      "All farmers are verified. Track produce from farm to table with complete transparency.",
+    "landing.local_sourcing": "Local Sourcing",
+    "landing.local_sourcing_desc":
+      "Support local farmers and reduce carbon footprint with region-based marketplace matching.",
+    "landing.realtime_updates": "Real-Time Updates",
+    "landing.realtime_updates_desc":
+      "Track orders, deliveries, and payments in real-time. Stay informed every step of the way.",
+    "landing.fresh_produce": "Fresh Produce",
+    "landing.fresh_produce_desc":
+      "Get the freshest vegetables and fruits directly from farms. Harvest-to-delivery in hours, not days.",
+    "landing.easy_ordering": "Easy Ordering",
+    "landing.easy_ordering_desc":
+      "Simple, mobile-friendly interface. Place bulk orders with just a few taps.",
+
+    // How It Works
+    "landing.how_works": "How It Works",
+    "landing.for_farmers": "For Farmers",
+    "landing.for_buyers": "For Buyers",
+    "landing.step1_title": "Sign Up & Get Verified",
+    "landing.step1_desc":
+      "Create your profile and get verified by our team. It's quick and free.",
+    "landing.step2_title": "List Your Produce",
+    "landing.step2_desc":
+      "Add your available produce with photos, quantities, and prices.",
+    "landing.step3_title": "Receive Orders",
+    "landing.step3_desc":
+      "Get notified when buyers place orders. Accept or negotiate terms.",
+    "landing.step4_title": "Deliver & Get Paid",
+    "landing.step4_desc":
+      "Arrange delivery and receive payment directly to your account.",
+    "landing.buyer_step1_title": "Create Account",
+    "landing.buyer_step1_desc":
+      "Sign up as a buyer. Add your business details and delivery location.",
+    "landing.buyer_step2_title": "Browse Marketplace",
+    "landing.buyer_step2_desc":
+      "Search for produce by type, location, price, and availability.",
+    "landing.buyer_step3_title": "Place Orders",
+    "landing.buyer_step3_desc":
+      "Select produce, specify quantities, and place your order instantly.",
+    "landing.buyer_step4_title": "Track & Receive",
+    "landing.buyer_step4_desc":
+      "Track your order in real-time and receive fresh produce at your location.",
+
+    // CTA Section
+    "landing.ready_join": "Ready to Join AgroConnect?",
+    "landing.ready_desc":
+      "Whether you're a farmer looking to reach more buyers or a buyer seeking fresh produce, we're here to help.",
+    "landing.try_demo_btn": "Try Demo",
+    "landing.get_started": "Get Started",
+
+    // Footer
+    "landing.footer_desc": "Empowering farmers, feeding cities.",
+
+    // Dashboard
+    "dashboard.welcome": "Welcome back",
+    "dashboard.add_produce": "Add New Produce",
+    "dashboard.total_earnings": "Total Earnings",
+    "dashboard.active_listings": "Active Listings",
+    "dashboard.pending_orders": "Pending Orders",
+    "dashboard.completed_orders": "Completed Orders",
+    "dashboard.available_purchase": "Available for purchase",
+    "dashboard.awaiting_confirmation": "Awaiting confirmation",
+    "dashboard.this_month": "This month",
+    "dashboard.earnings_over_time": "Earnings Over Time",
+    "dashboard.last_month": "Last month",
+    "dashboard.recent_orders": "Recent Orders",
+    "dashboard.top_selling": "Top Selling Produce",
+    "dashboard.view_all_orders": "View All Orders",
+    "dashboard.manage_produce": "Manage Produce",
+
+    // Produce Modal
+    "produce.add_title": "Add New Produce",
+    "produce.add_desc": "Add a new product to your listings",
+    "produce.product_name": "Product Name",
+    "produce.product_name_placeholder": "e.g., Fresh Tomatoes",
+    "produce.quantity": "Quantity",
+    "produce.unit": "Unit",
+    "produce.price": "Price per Unit",
+    "produce.currency": "৳",
+    "produce.description": "Description",
+    "produce.description_placeholder": "Describe your produce...",
+    "produce.add_button": "Add Produce",
+    "produce.image": "Product Image",
+    "produce.add_image": "Add Image",
+
+    // Settings
+    "settings.title": "Settings",
+    "settings.profile": "Profile",
+    "settings.edit_profile": "Edit Profile",
+    "settings.nid_verification": "NID Verification",
+    "settings.verify_now": "Verify Now",
+    "settings.language": "Language Preference",
+    "settings.bangla": "বাংলা",
+    "settings.english": "English",
+
+    // Cart
+    "cart.title": "Shopping Cart",
+    "cart.empty": "Your cart is empty",
+    "cart.items": "items",
+    "cart.total": "Total",
+    "cart.checkout": "Checkout",
+    "cart.continue_shopping": "Continue Shopping",
+
+    // Marketplace
+    "marketplace.title": "Marketplace",
+    "marketplace.filter": "Filter",
+    "marketplace.all_products": "All Products",
+
+    // Reviews
+    "reviews.title": "Customer Reviews",
+    "reviews.rating": "Rating",
+    "reviews.excellent": "Excellent service and fresh produce!",
+    "reviews.highly_recommend": "Highly recommend this seller.",
+    "reviews.great_quality": "Great quality products, fast delivery.",
+    "reviews.very_satisfied": "Very satisfied with the freshness.",
+    "reviews.reliable_seller": "Reliable seller, always on time.",
+
+    // Common
+    "common.save": "Save",
+    "common.cancel": "Cancel",
+    "common.edit": "Edit",
+    "common.delete": "Delete",
+    "common.loading": "Loading...",
+    "common.error": "Error",
+    "common.success": "Success",
+  },
+
+  bn: {
+    // Navigation
+    "nav.marketplace": "মার্কেট",
+    "nav.dashboard": "ড্যাশবোর্ড",
+    "nav.logout": "লগআউট",
+    "nav.farmer_login": "কৃষক লগইন",
+    "nav.buyer_login": "ক্রেতা লগইন",
+    "nav.language": "ভাষা",
+
+    // Landing Page
+    "landing.hero_title": "স্থানীয় খামার থেকে শহর রান্নাঘরে সংযোগ করুন",
+    "landing.hero_subtitle":
+      "তাজা উৎপাদন, ন্যায্য মূল্য, বিশ্বস্ত বাণিজ্য — কুমিরা থেকে চট্টগ্রাম পর্যন্ত",
+    "landing.farmer_portal": "কৃষক পোর্টাল",
+    "landing.buyer_portal": "ক্রেতা পোর্টাল",
+    "landing.try_demo":
+      "আমাদের ডেমো অ্যাকাউন্ট চেষ্টা করুন — কোনো সাইনআপ প্রয়োজন নেই",
+
+    // Explore Section
+    "landing.explore_title": "আমাদের বাজার অন্বেষণ করুন",
+    "landing.explore_subtitle":
+      "যাচাইকৃত স্থানীয় কৃষকদের থেকে তাজা পণ্য ব্রাউজ করুন। গুণমান গ্যারান্টিযুক্ত, মূল্য স্বচ্ছ।",
+    "landing.products": "তাজা পণ্য",
+    "landing.farmers": "যাচাইকৃত কৃষক",
+    "landing.open_market": "খোলা বাজার",
+    "landing.visit_marketplace": "বাজার পরিদর্শন করুন",
+
+    // Features
+    "landing.why_choose": "কেন AgroConnect বেছে নিন?",
+    "landing.why_subtitle":
+      "আমরা একটি স্বচ্ছ, দক্ষ বাজার তৈরি করছি যা সরবরাহ শৃঙ্খলে সবাইকে উপকৃত করে।",
+    "landing.fair_prices": "ন্যায্য মূল্য",
+    "landing.fair_prices_desc":
+      "সরাসরি সংযোগ কৃষকদের জন্য ভাল মূল্য এবং ক্রেতাদের জন্য প্রতিযোগী হার নিশ্চিত করে। কোনো মধ্যস্থতাকারী নেই।",
+    "landing.verified_quality": "যাচাইকৃত গুণমান",
+    "landing.verified_quality_desc":
+      "সমস্ত কৃষক যাচাইকৃত। খামার থেকে টেবিল পর্যন্ত সম্পূর্ণ স্বচ্ছতার সাথে ট্র্যাক করুন।",
+    "landing.local_sourcing": "স্থানীয় সোর্সিং",
+    "landing.local_sourcing_desc":
+      "স্থানীয় কৃষকদের সমর্থন করুন এবং অঞ্চল-ভিত্তিক বাজার ম্যাচিং সহ কার্বন পদচিহ্ন হ্রাস করুন।",
+    "landing.realtime_updates": "রিয়েল-টাইম আপডেট",
+    "landing.realtime_updates_desc":
+      "অর্ডার, ডেলিভারি এবং পেমেন্ট রিয়েল-টাইমে ট্র্যাক করুন। প্রতিটি পদক্ষেপে অবগত থাকুন।",
+    "landing.fresh_produce": "তাজা পণ্য",
+    "landing.fresh_produce_desc":
+      "খামার থেকে সরাসরি সবচেয়ে তাজা সবজি এবং ফল পান। ঘন্টার মধ্যে ডেলিভারি, দিন নয়।",
+    "landing.easy_ordering": "সহজ অর্ডারিং",
+    "landing.easy_ordering_desc":
+      "সহজ, মোবাইল-বান্ধব ইন্টারফেস। মাত্র কয়েকটি ট্যাপে বাল্ক অর্ডার করুন।",
+
+    // How It Works
+    "landing.how_works": "এটা কীভাবে কাজ করে",
+    "landing.for_farmers": "কৃষকদের জন্য",
+    "landing.for_buyers": "ক্রেতাদের জন্য",
+    "landing.step1_title": "সাইন আপ করুন এবং যাচাইকরণ পান",
+    "landing.step1_desc":
+      "আপনার প্রোফাইল তৈরি করুন এবং আমাদের দল দ্বারা যাচাইকরণ পান। এটি দ্রুত এবং বিনামূল্যে।",
+    "landing.step2_title": "আপনার পণ্য তালিকাভুক্ত করুন",
+    "landing.step2_desc":
+      "ছবি, পরিমাণ এবং মূল্য সহ আপনার উপলব্ধ পণ্য যোগ করুন।",
+    "landing.step3_title": "অর্ডার পান",
+    "landing.step3_desc":
+      "ক্রেতারা অর্ডার করলে বিজ্ঞপ্তি পান। শর্তাবলী গ্রহণ বা আলোচনা করুন।",
+    "landing.step4_title": "ডেলিভার করুন এবং পেমেন্ট পান",
+    "landing.step4_desc":
+      "ডেলিভারির ব্যবস্থা করুন এবং সরাসরি আপনার অ্যাকাউন্টে পেমেন্ট পান।",
+    "landing.buyer_step1_title": "অ্যাকাউন্ট তৈরি করুন",
+    "landing.buyer_step1_desc":
+      "ক্রেতা হিসাবে সাইন আপ করুন। আপনার ব্যবসায়িক বিবরণ এবং ডেলিভারি অবস্থান যোগ করুন।",
+    "landing.buyer_step2_title": "বাজার ব্রাউজ করুন",
+    "landing.buyer_step2_desc":
+      "ধরন, অবস্থান, মূল্য এবং উপলব্ধতা অনুযায়ী পণ্য অনুসন্ধান করুন।",
+    "landing.buyer_step3_title": "অর্ডার করুন",
+    "landing.buyer_step3_desc":
+      "পণ্য নির্বাচন করুন, পরিমাণ নির্দিষ্ট করুন এবং তাৎক্ষণিকভাবে অর্ডার করুন।",
+    "landing.buyer_step4_title": "ট্র্যাক এবং পান",
+    "landing.buyer_step4_desc":
+      "আপনার অর্ডার রিয়েল-টাইমে ট্র্যাক করুন এবং আপনার অবস্থানে তাজা পণ্য পান।",
+
+    // CTA Section
+    "landing.ready_join": "AgroConnect এ যোগ দিতে প্রস্তুত?",
+    "landing.ready_desc":
+      "আপনি কি কৃষক যিনি আরও ক্রেতার কাছে পৌঁছাতে চান বা ক্রেতা যারা তাজা পণ্য খুঁজছেন, আমরা এখানে আছি।",
+    "landing.try_demo_btn": "ডেমো চেষ্টা করুন",
+    "landing.get_started": "শুরু করুন",
+
+    // Footer
+    "landing.footer_desc": "কৃষকদের ক্ষমতায়ন, শহরগুলিকে খাওয়ান।",
+
+    // Dashboard
+    "dashboard.welcome": "স্বাগতম ফিরে",
+    "dashboard.add_produce": "নতুন পণ্য যোগ করুন",
+    "dashboard.total_earnings": "মোট আয়",
+    "dashboard.active_listings": "সক্রিয় তালিকা",
+    "dashboard.pending_orders": "অপেক্ষমাণ অর্ডার",
+    "dashboard.completed_orders": "সম্পন্ন অর্ডার",
+    "dashboard.available_purchase": "ক্রয়ের জন্য উপলব্ধ",
+    "dashboard.awaiting_confirmation": "অনুমোদনের অপেক্ষায়",
+    "dashboard.this_month": "এই মাস",
+    "dashboard.earnings_over_time": "সময়ের সাথে আয়",
+    "dashboard.last_month": "গত মাস",
+    "dashboard.recent_orders": "সম্প্রতি অর্ডার",
+    "dashboard.top_selling": "শীর্ষ বিক্রয় পণ্য",
+    "dashboard.view_all_orders": "সমস্ত অর্ডার দেখুন",
+    "dashboard.manage_produce": "পণ্য পরিচালনা করুন",
+
+    // Produce Modal
+    "produce.add_title": "নতুন পণ্য যোগ করুন",
+    "produce.add_desc": "আপনার তালিকায় একটি নতুন পণ্য যোগ করুন",
+    "produce.product_name": "পণ্যের নাম",
+    "produce.product_name_placeholder": "যেমন, তাজা টমেটো",
+    "produce.quantity": "পরিমাণ",
+    "produce.unit": "ইউনিট",
+    "produce.price": "ইউনিট প্রতি মূল্য",
+    "produce.currency": "৳",
+    "produce.description": "বর্ণনা",
+    "produce.description_placeholder": "আপনার পণ্য বর্ণনা করুন...",
+    "produce.add_button": "পণ্য যোগ করুন",
+    "produce.image": "পণ্যের ছবি",
+    "produce.add_image": "ছবি যোগ করুন",
+
+    // Settings
+    "settings.title": "সেটিংস",
+    "settings.profile": "প্রোফাইল",
+    "settings.edit_profile": "প্রোফাইল সম্পাদনা করুন",
+    "settings.nid_verification": "এনআইডি যাচাইকরণ",
+    "settings.verify_now": "এখন যাচাই করুন",
+    "settings.language": "ভাষা পছন্দ",
+    "settings.bangla": "বাংলা",
+    "settings.english": "English",
+
+    // Cart
+    "cart.title": "শপিং কার্ট",
+    "cart.empty": "আপনার কার্ট খালি",
+    "cart.items": "আইটেম",
+    "cart.total": "মোট",
+    "cart.checkout": "চেকআউট",
+    "cart.continue_shopping": "কেনাকাটা চালিয়ে যান",
+
+    // Marketplace
+    "marketplace.title": "মার্কেট",
+    "marketplace.filter": "ফিল্টার",
+    "marketplace.all_products": "সমস্ত পণ্য",
+
+    // Reviews
+    "reviews.title": "গ্রাহক পর্যালোচনা",
+    "reviews.rating": "রেটিং",
+    "reviews.excellent": "চমৎকার সেবা এবং তাজা পণ্য!",
+    "reviews.highly_recommend": "এই বিক্রেতাকে অত্যন্ত সুপারিশ করি।",
+    "reviews.great_quality": "দুর্দান্ত মানের পণ্য, দ্রুত ডেলিভারি।",
+    "reviews.very_satisfied": "তাজার সাথে খুব সন্তুষ্ট।",
+    "reviews.reliable_seller": "নির্ভরযোগ্য বিক্রেতা, সর্বদা সময়মত।",
+
+    // Common
+    "common.save": "সংরক্ষণ করুন",
+    "common.cancel": "বাতিল",
+    "common.edit": "সম্পাদনা",
+    "common.delete": "মুছে ফেলুন",
+    "common.loading": "লোড হচ্ছে...",
+    "common.error": "ত্রুটি",
+    "common.success": "সফল",
+  },
+}
+
+export type Language = keyof typeof translations
+export type TranslationKey = keyof typeof translations.en
