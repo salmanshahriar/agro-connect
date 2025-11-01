@@ -96,15 +96,6 @@ export default function BuyerDashboard() {
             Welcome back, City Fresh Market
           </p>
         </div>
-        <Button
-          className="mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-accent-foreground"
-          asChild
-        >
-          <Link href="/buyer/marketplace">
-            <ShoppingCart className="mr-2 h-4 w-4" />
-            Browse Marketplace
-          </Link>
-        </Button>
       </div>
 
       {/* Stats Grid */}

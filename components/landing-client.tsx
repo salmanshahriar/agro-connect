@@ -75,7 +75,6 @@ export function LandingClient() {
   const { isAuthenticated } = useAuth()
   const [cart, setCart] = useState<CartItem[]>([])
 
-  // Load cart from localStorage
   useEffect(() => {
     const savedCart = localStorage.getItem("agroconnect_cart")
     if (savedCart) {
@@ -83,7 +82,6 @@ export function LandingClient() {
     }
   }, [])
 
-  // Save cart to localStorage
   useEffect(() => {
     localStorage.setItem("agroconnect_cart", JSON.stringify(cart))
   }, [cart])
@@ -192,11 +190,50 @@ export function LandingClient() {
           </div>
 
           {/* Marketplace Items Grid */}
+          {/* Stats Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <Card className="border-border">
+              <CardContent className="pt-6 text-center">
+                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Package className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-1">
+                  150+
+                </h3>
+                <p className="text-muted-foreground">{t("landing.products")}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border">
+              <CardContent className="pt-6 text-center">
+                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Users className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-1">50+</h3>
+                <p className="text-muted-foreground">{t("landing.farmers")}</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border">
+              <CardContent className="pt-6 text-center">
+                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Store className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-1">
+                  24/7
+                </h3>
+                <p className="text-muted-foreground">
+                  {t("landing.open_market")}
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {DEMO_MARKETPLACE_ITEMS.map((item) => (
               <Card
                 key={item.id}
-                className="border-border overflow-hidden hover:shadow-lg transition-shadow"
+                className="border-border overflow-hidden hover:shadow-lg transition-shadow pt-0"
               >
                 <div className="relative aspect-square overflow-hidden bg-muted">
                   <img
@@ -264,45 +301,6 @@ export function LandingClient() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          {/* Stats Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <Card className="border-border">
-              <CardContent className="pt-6 text-center">
-                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Package className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-1">
-                  150+
-                </h3>
-                <p className="text-muted-foreground">{t("landing.products")}</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border">
-              <CardContent className="pt-6 text-center">
-                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-1">50+</h3>
-                <p className="text-muted-foreground">{t("landing.farmers")}</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border">
-              <CardContent className="pt-6 text-center">
-                <div className="bg-primary/10 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <Store className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-1">
-                  24/7
-                </h3>
-                <p className="text-muted-foreground">
-                  {t("landing.open_market")}
-                </p>
-              </CardContent>
-            </Card>
           </div>
 
           <div className="text-center">

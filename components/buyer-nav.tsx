@@ -84,7 +84,7 @@ export function BuyerNav() {
               )}
             >
               <Icon className="h-5 w-5" />
-              {item.label}
+              {t(item.label)}
             </Link>
           )
         })}

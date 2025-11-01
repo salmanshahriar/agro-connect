@@ -62,8 +62,8 @@ export function Navigation() {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation - Centered Links */}
+          <div className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2">
             <Link
               href="/marketplace"
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -81,7 +81,10 @@ export function Navigation() {
                 </Link>
               </>
             ) : null}
+          </div>
 
+          {/* Desktop Right Side Items */}
+          <div className="hidden md:flex items-center gap-6">
             {/* Language Toggle */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -194,7 +197,7 @@ export function Navigation() {
                   </DropdownMenuItem>
                   {user?.role === "farmer" && (
                     <DropdownMenuItem asChild>
-                      <Link href="/farmer/settings">Settings</Link>
+                      <Link href="/farmer/settings">{t("settings.title")}</Link>
                     </DropdownMenuItem>
                   )}
                   <DropdownMenuItem onClick={handleLogout}>

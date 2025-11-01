@@ -166,129 +166,129 @@ export const translations = {
     "nav.marketplace": "মার্কেট",
     "nav.dashboard": "ড্যাশবোর্ড",
     "nav.logout": "লগআউট",
-    "nav.farmer_login": "কৃষক লগইন",
-    "nav.buyer_login": "ক্রেতা লগইন",
+    "nav.farmer_login": "কৃষক প্রবেশ",
+    "nav.buyer_login": "ক্রেতা প্রবেশ",
     "nav.language": "ভাষা",
 
     // Landing Page
-    "landing.hero_title": "স্থানীয় খামার থেকে শহর রান্নাঘরে সংযোগ করুন",
+    "landing.hero_title": "স্থানীয় খামার থেকে শহরে, আপনার রান্নাঘরে তাজা পণ্যের সরবরাহ।",
     "landing.hero_subtitle":
-      "তাজা উৎপাদন, ন্যায্য মূল্য, বিশ্বস্ত বাণিজ্য — কুমিরা থেকে চট্টগ্রাম পর্যন্ত",
+      "তাজা পণ্য, ন্যায্য মূল্য, বিশ্বস্ত বাণিজ্য — কুমিরা থেকে চট্টগ্রাম পর্যন্ত",
     "landing.farmer_portal": "কৃষক পোর্টাল",
     "landing.buyer_portal": "ক্রেতা পোর্টাল",
     "landing.try_demo":
-      "আমাদের ডেমো অ্যাকাউন্ট চেষ্টা করুন — কোনো সাইনআপ প্রয়োজন নেই",
+      "আমাদের ডেমো অ্যাকাউন্ট ব্যবহার করুন — কোনো রেজিস্ট্রেশন প্রয়োজন নেই",
 
     // Explore Section
-    "landing.explore_title": "আমাদের বাজার অন্বেষণ করুন",
+    "landing.explore_title": "আমাদের মার্কেট ঘুরে দেখুন",
     "landing.explore_subtitle":
-      "যাচাইকৃত স্থানীয় কৃষকদের থেকে তাজা পণ্য ব্রাউজ করুন। গুণমান গ্যারান্টিযুক্ত, মূল্য স্বচ্ছ।",
+      "যাচাইকৃত স্থানীয় কৃষকদের কাছ থেকে তাজা পণ্য দেখুন। গুণমান নিশ্চিত, মূল্য স্বচ্ছ।",
     "landing.products": "তাজা পণ্য",
     "landing.farmers": "যাচাইকৃত কৃষক",
-    "landing.open_market": "খোলা বাজার",
-    "landing.visit_marketplace": "বাজার পরিদর্শন করুন",
+    "landing.open_market": "উন্মুক্ত মার্কেট",
+    "landing.visit_marketplace": "মার্কেট দেখুন",
 
     // Features
-    "landing.why_choose": "কেন AgroConnect বেছে নিন?",
+    "landing.why_choose": "কেন AgroConnect বেছে নেবেন?",
     "landing.why_subtitle":
-      "আমরা একটি স্বচ্ছ, দক্ষ বাজার তৈরি করছি যা সরবরাহ শৃঙ্খলে সবাইকে উপকৃত করে।",
+      "আমরা একটি স্বচ্ছ, দক্ষ মার্কেট তৈরি করছি যা সরবরাহ শৃঙ্খলের সকলের জন্য উপকারী।",
     "landing.fair_prices": "ন্যায্য মূল্য",
     "landing.fair_prices_desc":
-      "সরাসরি সংযোগ কৃষকদের জন্য ভাল মূল্য এবং ক্রেতাদের জন্য প্রতিযোগী হার নিশ্চিত করে। কোনো মধ্যস্থতাকারী নেই।",
-    "landing.verified_quality": "যাচাইকৃত গুণমান",
+      "সরাসরি সংযোগের মাধ্যমে কৃষকদের জন্য উন্নত মূল্য এবং ক্রেতাদের জন্য প্রতিযোগিতামূলক দাম। কোনো মধ্যস্থতাকারী নেই।",
+    "landing.verified_quality": "যাচাইকৃত মানসম্পন্ন",
     "landing.verified_quality_desc":
-      "সমস্ত কৃষক যাচাইকৃত। খামার থেকে টেবিল পর্যন্ত সম্পূর্ণ স্বচ্ছতার সাথে ট্র্যাক করুন।",
-    "landing.local_sourcing": "স্থানীয় সোর্সিং",
+      "সকল কৃষক যাচাইকৃত। খামার থেকে টেবিল পর্যন্ত সম্পূর্ণ স্বচ্ছতার সাথে পণ্য ট্র্যাক করুন।",
+    "landing.local_sourcing": "স্থানীয় উৎস",
     "landing.local_sourcing_desc":
-      "স্থানীয় কৃষকদের সমর্থন করুন এবং অঞ্চল-ভিত্তিক বাজার ম্যাচিং সহ কার্বন পদচিহ্ন হ্রাস করুন।",
+      "স্থানীয় কৃষকদের সহায়তা করুন এবং অঞ্চল-ভিত্তিক মার্কেট ম্যাচিং এর মাধ্যমে কার্বন নিঃসরণ কমান।",
     "landing.realtime_updates": "রিয়েল-টাইম আপডেট",
     "landing.realtime_updates_desc":
-      "অর্ডার, ডেলিভারি এবং পেমেন্ট রিয়েল-টাইমে ট্র্যাক করুন। প্রতিটি পদক্ষেপে অবগত থাকুন।",
-    "landing.fresh_produce": "তাজা পণ্য",
+      "অর্ডার, ডেলিভারি এবং পেমেন্ট রিয়েল-টাইমে ট্র্যাক করুন। প্রতিটি ধাপে সর্বদা অবহিত থাকুন।",
+    "landing.fresh_produce": "তাজা কৃষিপণ্য",
     "landing.fresh_produce_desc":
-      "খামার থেকে সরাসরি সবচেয়ে তাজা সবজি এবং ফল পান। ঘন্টার মধ্যে ডেলিভারি, দিন নয়।",
+      "খামার থেকে সরাসরি সবচেয়ে তাজা শাকসবজি এবং ফলমূল পান। ঘণ্টার মধ্যে সংগ্রহ থেকে ডেলিভারি, দিন নয়।",
     "landing.easy_ordering": "সহজ অর্ডারিং",
     "landing.easy_ordering_desc":
-      "সহজ, মোবাইল-বান্ধব ইন্টারফেস। মাত্র কয়েকটি ট্যাপে বাল্ক অর্ডার করুন।",
+      "সহজ, মোবাইল-বান্ধব ইন্টারফেস। মাত্র কয়েকটি ট্যাপেই বাল্ক অর্ডার করুন।",
 
     // How It Works
-    "landing.how_works": "এটা কীভাবে কাজ করে",
+    "landing.how_works": "কিভাবে কাজ করে",
     "landing.for_farmers": "কৃষকদের জন্য",
     "landing.for_buyers": "ক্রেতাদের জন্য",
-    "landing.step1_title": "সাইন আপ করুন এবং যাচাইকরণ পান",
+    "landing.step1_title": "নিবন্ধন করুন এবং যাচাই হন",
     "landing.step1_desc":
-      "আপনার প্রোফাইল তৈরি করুন এবং আমাদের দল দ্বারা যাচাইকরণ পান। এটি দ্রুত এবং বিনামূল্যে।",
+      "আপনার প্রোফাইল তৈরি করুন এবং আমাদের টিমের মাধ্যমে যাচাই করান। এটি দ্রুত এবং বিনামূল্যে।",
     "landing.step2_title": "আপনার পণ্য তালিকাভুক্ত করুন",
     "landing.step2_desc":
-      "ছবি, পরিমাণ এবং মূল্য সহ আপনার উপলব্ধ পণ্য যোগ করুন।",
-    "landing.step3_title": "অর্ডার পান",
+      "ছবি, পরিমাণ এবং মূল্যসহ আপনার উপলব্ধ পণ্য যুক্ত করুন।",
+    "landing.step3_title": "অর্ডার গ্রহণ করুন",
     "landing.step3_desc":
-      "ক্রেতারা অর্ডার করলে বিজ্ঞপ্তি পান। শর্তাবলী গ্রহণ বা আলোচনা করুন।",
-    "landing.step4_title": "ডেলিভার করুন এবং পেমেন্ট পান",
+      "ক্রেতারা অর্ডার দিলে নোটিফিকেশন পান। শর্তাবলী গ্রহণ বা আলোচনা করুন।",
+    "landing.step4_title": "ডেলিভারি দিন এবং পেমেন্ট পান",
     "landing.step4_desc":
-      "ডেলিভারির ব্যবস্থা করুন এবং সরাসরি আপনার অ্যাকাউন্টে পেমেন্ট পান।",
+      "ডেলিভারির ব্যবস্থা করুন এবং সরাসরি আপনার অ্যাকাউন্টে পেমেন্ট গ্রহণ করুন।",
     "landing.buyer_step1_title": "অ্যাকাউন্ট তৈরি করুন",
     "landing.buyer_step1_desc":
-      "ক্রেতা হিসাবে সাইন আপ করুন। আপনার ব্যবসায়িক বিবরণ এবং ডেলিভারি অবস্থান যোগ করুন।",
-    "landing.buyer_step2_title": "বাজার ব্রাউজ করুন",
+      "ক্রেতা হিসেবে নিবন্ধন করুন। আপনার ব্যবসায়িক তথ্য এবং ডেলিভারি ঠিকানা যুক্ত করুন।",
+    "landing.buyer_step2_title": "মার্কেট ব্রাউজ করুন",
     "landing.buyer_step2_desc":
-      "ধরন, অবস্থান, মূল্য এবং উপলব্ধতা অনুযায়ী পণ্য অনুসন্ধান করুন।",
+      "ধরন, অবস্থান, মূল্য এবং প্রাপ্যতা অনুযায়ী পণ্য খুঁজুন।",
     "landing.buyer_step3_title": "অর্ডার করুন",
     "landing.buyer_step3_desc":
-      "পণ্য নির্বাচন করুন, পরিমাণ নির্দিষ্ট করুন এবং তাৎক্ষণিকভাবে অর্ডার করুন।",
-    "landing.buyer_step4_title": "ট্র্যাক এবং পান",
+      "পণ্য নির্বাচন করুন, পরিমাণ নির্ধারণ করুন এবং তাৎক্ষণিকভাবে অর্ডার সম্পন্ন করুন।",
+    "landing.buyer_step4_title": "ট্র্যাক করুন এবং গ্রহণ করুন",
     "landing.buyer_step4_desc":
-      "আপনার অর্ডার রিয়েল-টাইমে ট্র্যাক করুন এবং আপনার অবস্থানে তাজা পণ্য পান।",
+      "আপনার অর্ডার রিয়েল-টাইমে ট্র্যাক করুন এবং আপনার ঠিকানায় তাজা পণ্য গ্রহণ করুন।",
 
     // CTA Section
     "landing.ready_join": "AgroConnect এ যোগ দিতে প্রস্তুত?",
     "landing.ready_desc":
-      "আপনি কি কৃষক যিনি আরও ক্রেতার কাছে পৌঁছাতে চান বা ক্রেতা যারা তাজা পণ্য খুঁজছেন, আমরা এখানে আছি।",
-    "landing.try_demo_btn": "ডেমো চেষ্টা করুন",
+      "আপনি কি একজন কৃষক যিনি আরও ক্রেতার কাছে পৌঁছাতে চান নাকি একজন ক্রেতা যিনি তাজা পণ্য খুঁজছেন, আমরা সাহায্য করতে প্রস্তুত।",
+    "landing.try_demo_btn": "ডেমো ব্যবহার করুন",
     "landing.get_started": "শুরু করুন",
 
     // Footer
-    "landing.footer_desc": "কৃষকদের ক্ষমতায়ন, শহরগুলিকে খাওয়ান।",
+    "landing.footer_desc": "প্রযুক্তির সেতুবন্ধনে ন্যায্য বাজার ও টেকসই সংযোগ।",
 
     // Dashboard
-    "dashboard.welcome": "স্বাগতম ফিরে",
-    "dashboard.add_produce": "নতুন পণ্য যোগ করুন",
+    "dashboard.welcome": "পুনরায় স্বাগতম",
+    "dashboard.add_produce": "নতুন পণ্য যুক্ত করুন",
     "dashboard.total_earnings": "মোট আয়",
     "dashboard.active_listings": "সক্রিয় তালিকা",
-    "dashboard.pending_orders": "অপেক্ষমাণ অর্ডার",
+    "dashboard.pending_orders": "বিচারাধীন অর্ডার",
     "dashboard.completed_orders": "সম্পন্ন অর্ডার",
     "dashboard.available_purchase": "ক্রয়ের জন্য উপলব্ধ",
-    "dashboard.awaiting_confirmation": "অনুমোদনের অপেক্ষায়",
+    "dashboard.awaiting_confirmation": "নিশ্চিতকরণের অপেক্ষায়",
     "dashboard.this_month": "এই মাস",
     "dashboard.earnings_over_time": "সময়ের সাথে আয়",
     "dashboard.last_month": "গত মাস",
-    "dashboard.recent_orders": "সম্প্রতি অর্ডার",
-    "dashboard.top_selling": "শীর্ষ বিক্রয় পণ্য",
-    "dashboard.view_all_orders": "সমস্ত অর্ডার দেখুন",
-    "dashboard.manage_produce": "পণ্য পরিচালনা করুন",
+    "dashboard.recent_orders": "সাম্প্রতিক অর্ডার",
+    "dashboard.top_selling": "শীর্ষ বিক্রিত পণ্য",
+    "dashboard.view_all_orders": "সকল অর্ডার দেখুন",
+    "dashboard.manage_produce": "পণ্য ব্যবস্থাপনা",
 
     // Produce Modal
-    "produce.add_title": "নতুন পণ্য যোগ করুন",
-    "produce.add_desc": "আপনার তালিকায় একটি নতুন পণ্য যোগ করুন",
+    "produce.add_title": "নতুন পণ্য যুক্ত করুন",
+    "produce.add_desc": "আপনার তালিকায় একটি নতুন পণ্য যুক্ত করুন",
     "produce.product_name": "পণ্যের নাম",
-    "produce.product_name_placeholder": "যেমন, তাজা টমেটো",
+    "produce.product_name_placeholder": "উদাহরণ: তাজা টমেটো",
     "produce.quantity": "পরিমাণ",
-    "produce.unit": "ইউনিট",
-    "produce.price": "ইউনিট প্রতি মূল্য",
+    "produce.unit": "একক",
+    "produce.price": "প্রতি একক মূল্য",
     "produce.currency": "৳",
-    "produce.description": "বর্ণনা",
-    "produce.description_placeholder": "আপনার পণ্য বর্ণনা করুন...",
-    "produce.add_button": "পণ্য যোগ করুন",
+    "produce.description": "বিবরণ",
+    "produce.description_placeholder": "আপনার পণ্যের বিবরণ লিখুন...",
+    "produce.add_button": "পণ্য যুক্ত করুন",
     "produce.image": "পণ্যের ছবি",
-    "produce.add_image": "ছবি যোগ করুন",
+    "produce.add_image": "ছবি যুক্ত করুন",
 
     // Settings
     "settings.title": "সেটিংস",
     "settings.profile": "প্রোফাইল",
     "settings.edit_profile": "প্রোফাইল সম্পাদনা করুন",
     "settings.nid_verification": "এনআইডি যাচাইকরণ",
-    "settings.verify_now": "এখন যাচাই করুন",
-    "settings.language": "ভাষা পছন্দ",
+    "settings.verify_now": "এখনই যাচাই করুন",
+    "settings.language": "ভাষার পছন্দ",
     "settings.bangla": "বাংলা",
     "settings.english": "English",
 
@@ -303,21 +303,21 @@ export const translations = {
     // Marketplace
     "marketplace.title": "মার্কেট",
     "marketplace.filter": "ফিল্টার",
-    "marketplace.all_products": "সমস্ত পণ্য",
+    "marketplace.all_products": "সকল পণ্য",
 
     // Reviews
-    "reviews.title": "গ্রাহক পর্যালোচনা",
+    "reviews.title": "ক্রেতা পর্যালোচনা",
     "reviews.rating": "রেটিং",
     "reviews.excellent": "চমৎকার সেবা এবং তাজা পণ্য!",
-    "reviews.highly_recommend": "এই বিক্রেতাকে অত্যন্ত সুপারিশ করি।",
+    "reviews.highly_recommend": "এই বিক্রেতাকে অত্যন্ত সুপারিশ করছি।",
     "reviews.great_quality": "দুর্দান্ত মানের পণ্য, দ্রুত ডেলিভারি।",
-    "reviews.very_satisfied": "তাজার সাথে খুব সন্তুষ্ট।",
-    "reviews.reliable_seller": "নির্ভরযোগ্য বিক্রেতা, সর্বদা সময়মত।",
+    "reviews.very_satisfied": "তাজা পণ্যে অত্যন্ত সন্তুষ্ট।",
+    "reviews.reliable_seller": "বিশ্বস্ত বিক্রেতা, সর্বদা সময়মতো।",
 
     // Common
     "common.save": "সংরক্ষণ করুন",
-    "common.cancel": "বাতিল",
-    "common.edit": "সম্পাদনা",
+    "common.cancel": "বাতিল করুন",
+    "common.edit": "সম্পাদনা করুন",
     "common.delete": "মুছে ফেলুন",
     "common.loading": "লোড হচ্ছে...",
     "common.error": "ত্রুটি",
