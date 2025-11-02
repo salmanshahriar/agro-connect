@@ -62,16 +62,6 @@ export function DeliveryAgentNav() {
         </Link>
       </div>
 
-      <div className="p-4 border-b border-border">
-        <Link
-          href="/marketplace"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-        >
-          <Store className="h-5 w-5" />
-          {t("nav.marketplace")}
-        </Link>
-      </div>
-
       <div className="px-4 pt-4 pb-2">
         <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
           {t("dashboard.welcome")}

@@ -88,7 +88,9 @@ export const translations = {
     "landing.footer_desc": "Empowering farmers, feeding cities.",
 
     // Dashboard
+    "dashboard.order-tracking": "Order Tracking",
     "dashboard.welcome": "Welcome back",
+    "dashboard.available-orders": "Available Orders",
     "dashboard.add_produce": "Add New Produce",
     "dashboard.total_earnings": "Total Earnings",
     "dashboard.active_listings": "Active Listings",
@@ -256,6 +258,8 @@ export const translations = {
 
     // Dashboard
     "dashboard.welcome": "পুনরায় স্বাগতম",
+    "dashboard.order-tracking": "অর্ডার ট্র্যাকিং",
+    "dashboard.available-orders": "উপলব্ধ অর্ডার",
     "dashboard.add_produce": "নতুন পণ্য যুক্ত করুন",
     "dashboard.total_earnings": "মোট আয়",
     "dashboard.active_listings": "সক্রিয় তালিকা",

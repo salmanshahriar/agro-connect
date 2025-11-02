@@ -11,6 +11,7 @@ import {
   Sprout,
   LogOut,
   Store,
+  MapPinned,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useAuth } from "@/contexts/auth-context"
@@ -39,9 +40,9 @@ export function AdminNav() {
       icon: Users,
     },
     {
-      title: "Order Monitoring",
+      title: "dashboard.available-orders",
       href: "/admin/orders",
-      icon: Package,
+      icon: MapPinned,
     },
     {
       title: "Broadcasts",
@@ -65,16 +66,6 @@ export function AdminNav() {
               {t("nav.dashboard")}
             </span>
           </div>
-        </Link>
-      </div>
-
-      <div className="p-4 border-b border-border">
-        <Link
-          href="/marketplace"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-        >
-          <Store className="h-5 w-5" />
-          {t("nav.marketplace")}
         </Link>
       </div>
 

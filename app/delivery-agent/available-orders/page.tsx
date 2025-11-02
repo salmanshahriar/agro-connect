@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -14,90 +14,91 @@ import {
   TrendingUp,
 } from "lucide-react"
 
-// Mock orders data with coordinates (Singapore area)
-const availableOrders = [
+interface Order {
+  id: string
+  pickup: string
+  dropoff: string
+  pickupAddress: string
+  dropoffAddress: string
+  pickupCoords: [number, number]
+  dropoffCoords: [number, number]
+  distance: string
+  amount: number
+  weight: string
+  items: string
+  urgency: "high" | "medium" | "low"
+  estimatedTime: string
+}
+
+const availableOrders: Order[] = [
   {
     id: "ORD-001",
-    pickup: "Green Valley Farm",
-    dropoff: "City Fresh Market",
-    pickupAddress: "Plot 45, Sector 12, Farmville",
-    dropoffAddress: "123 Market Street, Downtown",
-    pickupCoords: { lat: 1.3521, lng: 103.8198 },
-    dropoffCoords: { lat: 1.2897, lng: 103.8501 },
-    distance: "12 km",
-    amount: 350,
+    pickup: "Kumira Wholesale Market",
+    dropoff: "Chittagong City Market",
+    pickupAddress: "Kumira Bazar, Sitakunda",
+    dropoffAddress: "Chawk Bazar, Chittagong",
+    pickupCoords: [22.5025, 91.7051],
+    dropoffCoords: [22.3569, 91.8332],
+    distance: "18 km",
+    amount: 450,
     weight: "80kg",
     items: "Tomatoes, Carrots",
     urgency: "high",
-    estimatedTime: "45 mins",
+    estimatedTime: "35 mins",
   },
   {
     id: "ORD-002",
-    pickup: "Organic Fields Co-op",
-    dropoff: "Green Grocers Ltd",
-    pickupAddress: "Village Road, Organic Valley",
-    dropoffAddress: "456 Commerce Ave, City Center",
-    pickupCoords: { lat: 1.3644, lng: 103.9915 },
-    dropoffCoords: { lat: 1.3048, lng: 103.8318 },
-    distance: "8 km",
-    amount: 280,
-    weight: "100kg",
-    items: "Potatoes",
-    urgency: "medium",
-    estimatedTime: "30 mins",
-  },
-  {
-    id: "ORD-003",
-    pickup: "Sunny Acres Farm",
-    dropoff: "Fresh Food Hub",
-    pickupAddress: "Highway 7, Rural District",
-    dropoffAddress: "789 Distribution Center, East Side",
-    pickupCoords: { lat: 1.4382, lng: 103.7890 },
-    dropoffCoords: { lat: 1.3138, lng: 103.8627 },
-    distance: "18 km",
-    amount: 420,
-    weight: "150kg",
-    items: "Mixed Vegetables",
+    pickup: "Kumira Fish Landing Center",
+    dropoff: "Agrabad Commercial Area",
+    pickupAddress: "Kumira Ghat Road, Sitakunda",
+    dropoffAddress: "Agrabad Access Road, Chittagong",
+    pickupCoords: [22.5172, 91.7221],
+    dropoffCoords: [22.338, 91.81],
+    distance: "22 km",
+    amount: 550,
+    weight: "120kg",
+    items: "Fresh Fish, Seafood",
     urgency: "high",
-    estimatedTime: "60 mins",
+    estimatedTime: "40 mins",
   },
+
   {
     id: "ORD-004",
-    pickup: "Harvest Moon Farm",
-    dropoff: "Downtown Market",
-    pickupAddress: "Rural Route 5, Farmlands",
-    dropoffAddress: "234 Central Plaza, Downtown",
-    pickupCoords: { lat: 1.2880, lng: 103.7654 },
-    dropoffCoords: { lat: 1.2965, lng: 103.8477 },
-    distance: "15 km",
-    amount: 390,
-    weight: "120kg",
-    items: "Onions, Garlic",
-    urgency: "low",
-    estimatedTime: "50 mins",
+    pickup: "Kumira Poultry Farm",
+    dropoff: "Kotowali Market",
+    pickupAddress: "Kumira Union, Sitakunda",
+    dropoffAddress: "Anderkilla, Chittagong",
+    pickupCoords: [22.51, 91.715],
+    dropoffCoords: [22.3414, 91.827],
+    distance: "20 km",
+    amount: 420,
+    weight: "100kg",
+    items: "Chicken, Eggs",
+    urgency: "high",
+    estimatedTime: "38 mins",
   },
   {
     id: "ORD-005",
-    pickup: "Fresh Greens Co.",
-    dropoff: "Retail Hub Center",
-    pickupAddress: "Farm District, North Zone",
-    dropoffAddress: "567 Shopping District, West",
-    pickupCoords: { lat: 1.3783, lng: 103.8480 },
-    dropoffCoords: { lat: 1.3140, lng: 103.7632 },
-    distance: "22 km",
-    amount: 480,
-    weight: "200kg",
-    items: "Lettuce, Spinach",
+    pickup: "Bhatiari Farmers Co-op",
+    dropoff: "GEC Circle Market",
+    pickupAddress: "Bhatiari, Sitakunda",
+    dropoffAddress: "GEC Circle, Chittagong",
+    pickupCoords: [22.445, 91.73],
+    dropoffCoords: [22.364, 91.82],
+    distance: "24 km",
+    amount: 500,
+    weight: "180kg",
+    items: "Rice, Lentils, Onions",
     urgency: "medium",
-    estimatedTime: "75 mins",
+    estimatedTime: "50 mins",
   },
 ]
 
 export default function OrderMapView() {
   const [selectedOrder, setSelectedOrder] = useState<string | null>(null)
   const [hoveredOrder, setHoveredOrder] = useState<string | null>(null)
-  const [map, setMap] = useState<any>(null)
-  const [markers, setMarkers] = useState<any>({})
+  const mapRef = useRef<any>(null)
+  const markersRef = useRef<any>({})
 
   useEffect(() => {
     // Load Leaflet CSS
@@ -113,103 +114,19 @@ export default function OrderMapView() {
     document.body.appendChild(script)
 
     return () => {
+      if (mapRef.current) {
+        mapRef.current.remove()
+      }
       document.head.removeChild(link)
       document.body.removeChild(script)
     }
   }, [])
 
-  const initMap = () => {
-    const L = (window as any).L
-    if (!L) return
-
-    const mapInstance = L.map("map").setView([1.3521, 103.8198], 11)
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: '© OpenStreetMap contributors',
-    }).addTo(mapInstance)
-
-    const newMarkers: any = {}
-
-    availableOrders.forEach((order) => {
-      // Custom icon for pickup (green)
-      const pickupIcon = L.divIcon({
-        className: "custom-marker",
-        html: `<div style="background: #10b981; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); cursor: pointer;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-        </div>`,
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-      })
-
-      // Custom icon for dropoff (blue)
-      const dropoffIcon = L.divIcon({
-        className: "custom-marker",
-        html: `<div style="background: #3b82f6; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); cursor: pointer;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-        </div>`,
-        iconSize: [32, 32],
-        iconAnchor: [16, 32],
-      })
-
-      const pickupMarker = L.marker(
-        [order.pickupCoords.lat, order.pickupCoords.lng],
-        { icon: pickupIcon }
-      ).addTo(mapInstance)
-
-      const dropoffMarker = L.marker(
-        [order.dropoffCoords.lat, order.dropoffCoords.lng],
-        { icon: dropoffIcon }
-      ).addTo(mapInstance)
-
-      // Add route line
-      const routeLine = L.polyline(
-        [
-          [order.pickupCoords.lat, order.pickupCoords.lng],
-          [order.dropoffCoords.lat, order.dropoffCoords.lng],
-        ],
-        {
-          color: "#6366f1",
-          weight: 3,
-          opacity: 0.6,
-          dashArray: "10, 10",
-        }
-      ).addTo(mapInstance)
-
-      pickupMarker.on("click", () => {
-        setSelectedOrder(order.id)
-        mapInstance.setView(
-          [order.pickupCoords.lat, order.pickupCoords.lng],
-          13
-        )
-      })
-
-      dropoffMarker.on("click", () => {
-        setSelectedOrder(order.id)
-        mapInstance.setView(
-          [order.dropoffCoords.lat, order.dropoffCoords.lng],
-          13
-        )
-      })
-
-      newMarkers[order.id] = { pickupMarker, dropoffMarker, routeLine }
-    })
-
-    setMarkers(newMarkers)
-    setMap(mapInstance)
-  }
-
   useEffect(() => {
-    if (!map || !markers) return
-    const L = (window as any).L
+    if (!mapRef.current || !markersRef.current) return
 
-    Object.keys(markers).forEach((orderId) => {
-      const { pickupMarker, dropoffMarker, routeLine } = markers[orderId]
+    Object.keys(markersRef.current).forEach((orderId) => {
+      const { routeLine } = markersRef.current[orderId]
       const isSelected = selectedOrder === orderId
       const isHovered = hoveredOrder === orderId
 
@@ -227,23 +144,91 @@ export default function OrderMapView() {
         })
       }
     })
-  }, [selectedOrder, hoveredOrder, map, markers])
+  }, [selectedOrder, hoveredOrder])
+
+  const initMap = () => {
+    const L = (window as any).L
+    if (!L || mapRef.current) return
+
+    const map = L.map("map").setView([22.43, 91.77], 11)
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors",
+    }).addTo(map)
+
+    const newMarkers: any = {}
+
+    availableOrders.forEach((order) => {
+      const pickupIcon = L.divIcon({
+        className: "custom-marker",
+        html: `<div style="background: #10b981; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); cursor: pointer;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      })
+
+      const dropoffIcon = L.divIcon({
+        className: "custom-marker",
+        html: `<div style="background: #3b82f6; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3); cursor: pointer;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>`,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+      })
+
+      const pickupMarker = L.marker(order.pickupCoords, {
+        icon: pickupIcon,
+      }).addTo(map)
+
+      const dropoffMarker = L.marker(order.dropoffCoords, {
+        icon: dropoffIcon,
+      }).addTo(map)
+
+      const routeLine = L.polyline([order.pickupCoords, order.dropoffCoords], {
+        color: "#6366f1",
+        weight: 3,
+        opacity: 0.6,
+        dashArray: "10, 10",
+      }).addTo(map)
+
+      pickupMarker.on("click", () => handleSelectOrder(order.id))
+      dropoffMarker.on("click", () => handleSelectOrder(order.id))
+
+      newMarkers[order.id] = { pickupMarker, dropoffMarker, routeLine }
+    })
+
+    markersRef.current = newMarkers
+    mapRef.current = map
+  }
+
+  const handleSelectOrder = (orderId: string) => {
+    setSelectedOrder(orderId)
+    const order = availableOrders.find((o) => o.id === orderId)
+    if (order && mapRef.current) {
+      const L = (window as any).L
+      const bounds = L.latLngBounds([order.pickupCoords, order.dropoffCoords])
+      mapRef.current.fitBounds(bounds, { padding: [50, 50] })
+    }
+  }
+
+  const handleViewRoute = (order: Order) => {
+    handleSelectOrder(order.id)
+  }
 
   const handleAcceptOrder = (orderId: string) => {
-    alert(`Order ${orderId} accepted!`)
+    alert(`Order ${orderId} accepted! Starting navigation...`)
   }
 
-  const handleViewRoute = (order: any) => {
-    if (!map) return
-    setSelectedOrder(order.id)
-    const bounds = (window as any).L.latLngBounds([
-      [order.pickupCoords.lat, order.pickupCoords.lng],
-      [order.dropoffCoords.lat, order.dropoffCoords.lng],
-    ])
-    map.fitBounds(bounds, { padding: [50, 50] })
-  }
-
-  const getUrgencyColor = (urgency: string) => {
+  const getUrgencyColor = (
+    urgency: string
+  ): "default" | "destructive" | "secondary" | "outline" => {
     switch (urgency) {
       case "high":
         return "destructive"
@@ -259,6 +244,11 @@ export default function OrderMapView() {
   const getUrgencyText = (urgency: string) => {
     return urgency.charAt(0).toUpperCase() + urgency.slice(1) + " Priority"
   }
+
+  const totalValue = availableOrders.reduce(
+    (sum, order) => sum + order.amount,
+    0
+  )
 
   return (
     <div className="flex h-screen bg-background">
@@ -280,12 +270,10 @@ export default function OrderMapView() {
               <CardContent className="p-4">
                 <div className="flex items-center gap-2 mb-1">
                   <TrendingUp className="h-4 w-4 text-primary" />
-                  <p className="text-xs text-muted-foreground">
-                    Total Value
-                  </p>
+                  <p className="text-xs text-muted-foreground">Total Value</p>
                 </div>
                 <p className="text-xl font-bold text-foreground">
-                  ৳{availableOrders.reduce((sum, o) => sum + o.amount, 0)}
+                  ৳{totalValue.toLocaleString()}
                 </p>
               </CardContent>
             </Card>
@@ -322,7 +310,10 @@ export default function OrderMapView() {
                       <CardTitle className="text-sm font-semibold">
                         {order.id}
                       </CardTitle>
-                      <Badge variant={getUrgencyColor(order.urgency)} className="text-xs">
+                      <Badge
+                        variant={getUrgencyColor(order.urgency)}
+                        className="text-xs"
+                      >
                         {getUrgencyText(order.urgency)}
                       </Badge>
                     </div>
@@ -409,22 +400,28 @@ export default function OrderMapView() {
       {/* Right Panel - Map (2/3 width) */}
       <div className="w-2/3 relative">
         <div id="map" className="w-full h-full"></div>
-        
+
         {/* Map Legend */}
         <div className="absolute top-4 right-4 bg-card border border-border rounded-lg p-4 shadow-lg z-[1000]">
           <h3 className="text-sm font-semibold text-foreground mb-3">Legend</h3>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded-full bg-green-500"></div>
-              <span className="text-xs text-muted-foreground">Pickup Location</span>
+              <span className="text-xs text-muted-foreground">
+                Pickup Location
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded-full bg-blue-500"></div>
-              <span className="text-xs text-muted-foreground">Dropoff Location</span>
+              <span className="text-xs text-muted-foreground">
+                Dropoff Location
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-0.5 border-t-2 border-dashed border-indigo-500"></div>
-              <span className="text-xs text-muted-foreground">Delivery Route</span>
+              <span className="text-xs text-muted-foreground">
+                Delivery Route
+              </span>
             </div>
           </div>
         </div>

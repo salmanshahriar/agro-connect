@@ -14,6 +14,7 @@ import {
   Settings,
   Menu,
   X,
+  MapPinned,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useAuth } from "@/contexts/auth-context"
@@ -42,6 +43,11 @@ export function FarmerNav() {
       href: "/farmer/orders",
       label: "dashboard.view_all_orders",
       icon: ShoppingCart,
+    },
+    {
+      title: "dashboard.order-tracking",
+      href: "/farmer/order-monitor",
+      icon: MapPinned,
     },
     {
       href: "/farmer/earnings",
@@ -143,7 +149,7 @@ export function FarmerNav() {
                 onClick={closeMobileMenu}
               >
                 <Icon className="h-5 w-5" />
-                {t(item.label)}
+                {t(item.label ?? item.title ?? "")}
               </Link>
             )
           })}

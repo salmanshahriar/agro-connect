@@ -278,7 +278,7 @@ export default function AdminMonitoring() {
         <div className="p-6">
           <div className="mb-6">
             <h1 className="text-2xl font-bold text-foreground mb-1">
-              Delivery Monitor
+              Track My Delivery
             </h1>
             <p className="text-sm text-muted-foreground">
               Real-time tracking & management
