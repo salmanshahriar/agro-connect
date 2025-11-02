@@ -9,6 +9,7 @@ import {
   ShoppingCart,
   LogOut,
   Store,
+  MapPinned,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useAuth } from "@/contexts/auth-context"
@@ -26,6 +27,11 @@ export function BuyerNav() {
       href: "/buyer/orders",
       label: "dashboard.view_all_orders",
       icon: ShoppingCart,
+    },
+    {
+      title: "dashboard.order-tracking",
+      href: "/buyer/order-monitor",
+      icon: MapPinned,
     },
   ]
 
@@ -84,7 +90,7 @@ export function BuyerNav() {
               )}
             >
               <Icon className="h-5 w-5" />
-              {t(item.label)}
+              {t(item.label ?? item.title ?? "")}
             </Link>
           )
         })}

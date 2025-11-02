@@ -164,6 +164,12 @@ export const translations = {
     "common.loading": "Loading...",
     "common.error": "Error",
     "common.success": "Success",
+
+    //admin
+    "admin.portal": "Admin Portal",
+    "admin.management": "Management",
+    "admin.farmer_verification": "Farmer Verification",
+    "admin.broadcasts": "Broadcasts",
   },
 
   bn: {
@@ -334,6 +340,12 @@ export const translations = {
     "common.loading": "লোড হচ্ছে...",
     "common.error": "ত্রুটি",
     "common.success": "সফল",
+
+    //admin
+    "admin.portal": "অ্যাডমিন পোর্টাল",
+    "admin.management": "ব্যবস্থাপনা",
+    "admin.farmer_verification": "কৃষক যাচাইকরণ",
+    "admin.broadcasts": "সম্প্রচার",
   },
 }
 
