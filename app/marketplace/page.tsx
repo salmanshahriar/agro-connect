@@ -172,9 +172,7 @@ export default function MarketplacePage() {
             <h1 className="text-3xl font-bold text-foreground mb-2">
               {t("marketplace.title")}
             </h1>
-            <p className="text-muted-foreground">
-              Browse fresh produce from verified farmers across Bangladesh
-            </p>
+            <p className="text-muted-foreground">{t("marketplace.subtitle")}</p>
           </div>
 
           {/* Search and Filters */}
@@ -183,10 +181,7 @@ export default function MarketplacePage() {
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder={
-                  t("marketplace.search_placeholder") ||
-                  "Search for produce or farmers..."
-                }
+                placeholder={t("marketplace.search_placeholder")}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-10"

@@ -139,6 +139,9 @@ export const translations = {
 
     // Marketplace
     "marketplace.title": "Marketplace",
+    "marketplace.subtitle":
+      "Browse fresh agricultural produce from verified farmers across Bangladesh.",
+    "marketplace.search_placeholder": "Search for produce or farmers...",
     "marketplace.filter": "Filter",
     "marketplace.all_products": "All Products",
 
@@ -171,7 +174,8 @@ export const translations = {
     "nav.language": "ভাষা",
 
     // Landing Page
-    "landing.hero_title": "স্থানীয় খামার থেকে শহরে, আপনার রান্নাঘরে তাজা পণ্যের সরবরাহ।",
+    "landing.hero_title":
+      "স্থানীয় খামার থেকে শহরে, আপনার রান্নাঘরে তাজা পণ্যের সরবরাহ।",
     "landing.hero_subtitle":
       "তাজা পণ্য, ন্যায্য মূল্য, বিশ্বস্ত বাণিজ্য — কুমিরা থেকে চট্টগ্রাম পর্যন্ত",
     "landing.farmer_portal": "কৃষক পোর্টাল",
@@ -302,6 +306,10 @@ export const translations = {
 
     // Marketplace
     "marketplace.title": "মার্কেট",
+    "marketplace.search_placeholder":
+      "উৎপাদিত পণ্য বা কৃষকদের জন্য অনুসন্ধান করুন।...",
+    "marketplace.subtitle":
+      "সারা বাংলাদেশের যাচাই করা কৃষকদের কাছ থেকে তাজা কৃষিপণ্য ব্রাউজ করুন।",
     "marketplace.filter": "ফিল্টার",
     "marketplace.all_products": "সকল পণ্য",
 

@@ -44,6 +44,7 @@ export function Navigation() {
     if (user.role === "farmer") return "/farmer/dashboard"
     if (user.role === "buyer") return "/buyer/dashboard"
     if (user.role === "admin") return "/admin/dashboard"
+    if (user.role === "delivery-agent") return "/delivery-agent/dashboard"
     return "/"
   }
 

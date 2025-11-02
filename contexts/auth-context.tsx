@@ -7,9 +7,8 @@ import {
   useEffect,
   type ReactNode,
 } from "react"
-import { DEMO_ACCOUNTS } from "@/lib/demo-data"
 
-type UserRole = "farmer" | "buyer" | "admin" | null
+type UserRole = "farmer" | "buyer" | "admin" | "delivery-agent" | null
 
 interface User {
   id: string
@@ -30,24 +29,72 @@ interface AuthContextType {
   logout: () => void
 }
 
+const DEMO_ACCOUNTS: Record<string, User> = {
+  farmer: {
+    id: "farmer_1",
+    name: "Abdul Karim",
+    role: "farmer",
+    phone: "+880 1712-345678",
+    location: "Gazipur, Dhaka",
+    verified: true,
+    avatar: "/avatars/farmer.jpg",
+    farmPhoto: "/farms/karim-farm.jpg",
+  },
+  buyer: {
+    id: "buyer_1",
+    name: "Shahed Alam",
+    role: "buyer",
+    phone: "+880 1812-345678",
+    location: "Dhanmondi, Dhaka",
+    businessName: "Shahed's Cafe",
+    avatar: "/avatars/buyer.jpg",
+  },
+  admin: {
+    id: "admin_1",
+    name: "Admin User",
+    role: "admin",
+    phone: "+880 1912-345678",
+    location: "Dhaka",
+    avatar: "/avatars/admin.jpg",
+  },
+  "delivery-agent": {
+    id: "delivery_1",
+    name: "Rashid Ahmed",
+    role: "delivery-agent",
+    phone: "+880 1612-345678",
+    location: "Mirpur, Dhaka",
+    verified: true,
+    avatar: "/avatars/delivery.jpg",
+  },
+}
+
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const savedUser = localStorage.getItem("agroconnect_user")
     if (savedUser) {
-      setUser(JSON.parse(savedUser))
+      try {
+        setUser(JSON.parse(savedUser))
+      } catch (error) {
+        console.error("Failed to parse saved user:", error)
+        localStorage.removeItem("agroconnect_user")
+      }
     }
+    setIsLoaded(true)
   }, [])
 
   const login = (role: UserRole) => {
     if (!role) return
 
     const demoUser = DEMO_ACCOUNTS[role]
-    setUser(demoUser as User)
-    localStorage.setItem("agroconnect_user", JSON.stringify(demoUser))
+    if (demoUser) {
+      setUser(demoUser)
+      localStorage.setItem("agroconnect_user", JSON.stringify(demoUser))
+    }
   }
 
   const logout = () => {

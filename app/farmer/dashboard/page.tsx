@@ -5,14 +5,7 @@ import type React from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import {
-  DollarSign,
-  Package,
-  ShoppingCart,
-  TrendingUp,
-  Plus,
-  ImageIcon,
-} from "lucide-react"
+import { DollarSign, Package, ShoppingCart, TrendingUp, Plus, ImageIcon } from "lucide-react"
 import Link from "next/link"
 import dynamic from "next/dynamic"
 import { useState } from "react"
@@ -30,9 +23,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useLanguage } from "@/contexts/language-context"
 import { useAuth } from "@/contexts/auth-context"
 
-const ApexChart = dynamic(() => import("@/components/apex-chart"), {
-  ssr: false,
-})
+const ApexChart = dynamic(() => import("@/components/apex-chart"), { ssr: false })
 
 export default function FarmerDashboard() {
   const [isAddProduceOpen, setIsAddProduceOpen] = useState(false)
@@ -58,14 +49,7 @@ export default function FarmerDashboard() {
   }
 
   const recentOrders = [
-    {
-      id: "ORD-001",
-      buyer: "City Fresh Market",
-      item: "Tomatoes",
-      quantity: "50 kg",
-      amount: 2500,
-      status: "pending",
-    },
+    { id: "ORD-001", buyer: "City Fresh Market", item: "Tomatoes", quantity: "50 kg", amount: 2500, status: "pending" },
     {
       id: "ORD-002",
       buyer: "Green Grocers Ltd",
@@ -74,14 +58,7 @@ export default function FarmerDashboard() {
       amount: 3000,
       status: "confirmed",
     },
-    {
-      id: "ORD-003",
-      buyer: "Organic Store",
-      item: "Carrots",
-      quantity: "30 kg",
-      amount: 1800,
-      status: "delivered",
-    },
+    { id: "ORD-003", buyer: "Organic Store", item: "Carrots", quantity: "30 kg", amount: 1800, status: "delivered" },
   ]
 
   const topProduce = [
@@ -109,9 +86,7 @@ export default function FarmerDashboard() {
           <h1 className="text-3xl font-bold text-foreground mb-2">
             {t("dashboard.welcome")}, {user?.name?.split(" ")[0]}
           </h1>
-          <p className="text-muted-foreground">
-            Manage your farm and track your sales
-          </p>
+          <p className="text-muted-foreground">Manage your farm and track your sales</p>
         </div>
         <Dialog open={isAddProduceOpen} onOpenChange={setIsAddProduceOpen}>
           <DialogTrigger asChild>
@@ -143,19 +118,13 @@ export default function FarmerDashboard() {
                         alt="Preview"
                         className="h-32 w-32 object-cover mx-auto rounded"
                       />
-                      <p className="text-sm text-muted-foreground">
-                        Click to change image
-                      </p>
+                      <p className="text-sm text-muted-foreground">Click to change image</p>
                     </div>
                   ) : (
                     <div className="space-y-2">
                       <ImageIcon className="h-8 w-8 mx-auto text-muted-foreground" />
-                      <p className="text-sm font-medium">
-                        {t("produce.add_image")}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        PNG, JPG, GIF up to 5MB
-                      </p>
+                      <p className="text-sm font-medium">{t("produce.add_image")}</p>
+                      <p className="text-xs text-muted-foreground">PNG, JPG, GIF up to 5MB</p>
                     </div>
                   )}
                 </div>
@@ -163,10 +132,7 @@ export default function FarmerDashboard() {
 
               <div className="grid gap-2">
                 <Label htmlFor="name">{t("produce.product_name")}</Label>
-                <Input
-                  id="name"
-                  placeholder={t("produce.product_name_placeholder")}
-                />
+                <Input id="name" placeholder={t("produce.product_name_placeholder")} />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid gap-2">
@@ -186,15 +152,9 @@ export default function FarmerDashboard() {
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="description">{t("produce.description")}</Label>
-                <Textarea
-                  id="description"
-                  placeholder={t("produce.description_placeholder")}
-                  rows={3}
-                />
+                <Textarea id="description" placeholder={t("produce.description_placeholder")} rows={3} />
               </div>
-              <Button className="w-full bg-primary hover:bg-primary/90">
-                {t("produce.add_button")}
-              </Button>
+              <Button className="w-full bg-primary hover:bg-primary/90">{t("produce.add_button")}</Button>
             </div>
           </DialogContent>
         </Dialog>
@@ -204,15 +164,11 @@ export default function FarmerDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              {t("dashboard.total_earnings")}
-            </CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">{t("dashboard.total_earnings")}</CardTitle>
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">
-              ৳{stats.totalEarnings.toLocaleString()}
-            </div>
+            <div className="text-2xl font-bold text-foreground">৳{stats.totalEarnings.toLocaleString()}</div>
             <p className="text-xs text-muted-foreground mt-1">
               <span className="text-primary">+20.1%</span> from last month
             </p>
@@ -227,29 +183,19 @@ export default function FarmerDashboard() {
             <Package className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">
-              {stats.activeListings}
-            </div>
-            <p className="text-xs text-muted-foreground mt-1">
-              {t("dashboard.available_purchase")}
-            </p>
+            <div className="text-2xl font-bold text-foreground">{stats.activeListings}</div>
+            <p className="text-xs text-muted-foreground mt-1">{t("dashboard.available_purchase")}</p>
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              {t("dashboard.pending_orders")}
-            </CardTitle>
+            <CardTitle className="text-sm font-medium text-muted-foreground">{t("dashboard.pending_orders")}</CardTitle>
             <ShoppingCart className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">
-              {stats.pendingOrders}
-            </div>
-            <p className="text-xs text-muted-foreground mt-1">
-              {t("dashboard.awaiting_confirmation")}
-            </p>
+            <div className="text-2xl font-bold text-foreground">{stats.pendingOrders}</div>
+            <p className="text-xs text-muted-foreground mt-1">{t("dashboard.awaiting_confirmation")}</p>
           </CardContent>
         </Card>
 
@@ -261,12 +207,8 @@ export default function FarmerDashboard() {
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">
-              {stats.completedOrders}
-            </div>
-            <p className="text-xs text-muted-foreground mt-1">
-              {t("dashboard.this_month")}
-            </p>
+            <div className="text-2xl font-bold text-foreground">{stats.completedOrders}</div>
+            <p className="text-xs text-muted-foreground mt-1">{t("dashboard.this_month")}</p>
           </CardContent>
         </Card>
       </div>
@@ -287,9 +229,7 @@ export default function FarmerDashboard() {
         {/* Recent Orders */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-foreground">
-              {t("dashboard.recent_orders")}
-            </CardTitle>
+            <CardTitle className="text-foreground">{t("dashboard.recent_orders")}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -306,36 +246,26 @@ export default function FarmerDashboard() {
                           order.status === "delivered"
                             ? "default"
                             : order.status === "confirmed"
-                            ? "secondary"
-                            : "outline"
+                              ? "secondary"
+                              : "outline"
                         }
                       >
                         {order.status}
                       </Badge>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      {order.buyer}
-                    </p>
+                    <p className="text-sm text-muted-foreground">{order.buyer}</p>
                     <p className="text-sm text-foreground">
                       {order.item} - {order.quantity}
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold text-foreground">
-                      ৳{order.amount}
-                    </p>
+                    <p className="font-semibold text-foreground">৳{order.amount}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <Button
-              variant="outline"
-              className="w-full mt-4 bg-transparent"
-              asChild
-            >
-              <Link href="/farmer/orders">
-                {t("dashboard.view_all_orders")}
-              </Link>
+            <Button variant="outline" className="w-full mt-4 bg-transparent" asChild>
+              <Link href="/farmer/orders">{t("dashboard.view_all_orders")}</Link>
             </Button>
           </CardContent>
         </Card>
@@ -343,9 +273,7 @@ export default function FarmerDashboard() {
         {/* Top Selling Produce */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-foreground">
-              {t("dashboard.top_selling")}
-            </CardTitle>
+            <CardTitle className="text-foreground">{t("dashboard.top_selling")}</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -356,27 +284,17 @@ export default function FarmerDashboard() {
                 >
                   <div className="flex-1">
                     <p className="font-medium text-foreground">{item.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {item.quantity} sold
-                    </p>
+                    <p className="text-sm text-muted-foreground">{item.quantity} sold</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-semibold text-foreground">
-                      ৳{item.revenue.toLocaleString()}
-                    </p>
+                    <p className="font-semibold text-foreground">৳{item.revenue.toLocaleString()}</p>
                     <p className="text-sm text-primary">{item.trend}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <Button
-              variant="outline"
-              className="w-full mt-4 bg-transparent"
-              asChild
-            >
-              <Link href="/farmer/produce">
-                {t("dashboard.manage_produce")}
-              </Link>
+            <Button variant="outline" className="w-full mt-4 bg-transparent" asChild>
+              <Link href="/farmer/produce">{t("dashboard.manage_produce")}</Link>
             </Button>
           </CardContent>
         </Card>

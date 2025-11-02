@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { useAuth } from "@/contexts/auth-context"
-import { User, Store, ShieldCheck } from "lucide-react"
+import { User, Store, ShieldCheck, Truck } from "lucide-react"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -23,7 +23,9 @@ export default function LoginPage() {
     }
   }, [isAuthenticated, router])
 
-  const handleLogin = (role: "farmer" | "buyer" | "admin") => {
+  const handleLogin = (
+    role: "farmer" | "buyer" | "admin" | "delivery-agent"
+  ) => {
     login(role)
 
     if (role === "farmer") {
@@ -32,12 +34,14 @@ export default function LoginPage() {
       router.push("/buyer/marketplace")
     } else if (role === "admin") {
       router.push("/admin/dashboard")
+    } else if (role === "delivery-agent") {
+      router.push("/delivery-agent/dashboard")
     }
   }
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-6">
+      <div className="w-full max-w-3xl space-y-6">
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-bold text-foreground">
             Welcome to AgroConnect
@@ -47,7 +51,7 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-2 gap-10 space-y-4">
           <Card
             className="border-2 hover:border-primary transition-colors cursor-pointer"
             onClick={() => handleLogin("farmer")}
@@ -92,12 +96,33 @@ export default function LoginPage() {
               <p className="text-sm text-muted-foreground mb-4">
                 Browse fresh produce, place orders, and track deliveries
               </p>
-              <Button
-                className="w-full bg-transparent"
-                size="lg"
-                variant="outline"
-              >
+              <Button className="w-full" size="lg" variant="default">
                 Login as Buyer
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="border-2 hover:border-primary transition-colors cursor-pointer"
+            onClick={() => handleLogin("delivery-agent")}
+          >
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Truck className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <CardTitle>Delivery Agent Portal</CardTitle>
+                  <CardDescription>Rashid Ahmed - Driver</CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground mb-4">
+                View assigned deliveries, update status, and navigate routes
+              </p>
+              <Button className="w-full" size="lg" variant="secondary">
+                Login as Delivery Agent
               </Button>
             </CardContent>
           </Card>
@@ -121,7 +146,7 @@ export default function LoginPage() {
               <p className="text-sm text-muted-foreground mb-4">
                 Verify farmers, monitor orders, and manage the platform
               </p>
-              <Button className="w-full" size="lg" variant="secondary">
+              <Button className="w-full" size="lg" variant="destructive">
                 Login as Admin
               </Button>
             </CardContent>
